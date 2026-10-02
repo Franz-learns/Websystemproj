@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<meta name="csrf-token" content="550aa9d632cd91d8f7e8f45297aafa2de9e8bead0e9767c30e3281b7380c833c">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Father and Son — The World's Finest In One Place</title>
+  <meta name="description" content="Discover the world's finest fragrances. 100% authentic, curated selection, fast delivery.">
+  <link rel="icon" type="image/png" href="assets/logo-father-and-son.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  
+  
+  <link rel="stylesheet" href="home.css">
+</head>
+<body class="is-loading">
+
+<!-- ── SCROLL PROGRESS BAR ── -->
+<div id="scroll-progress"></div>
+
+<!-- ════ FATHER & SON CINEMATIC LOADING SCREEN ═════════ -->
+<div id="scentinel-loader" aria-hidden="true">
+  <video class="fs-loader-video" autoplay muted loop playsinline>
+    <source src="assets/video-bg-MFK.mp4" type="video/mp4">
+  </video>
+  <div class="fs-loader-overlay"></div>
+  <div class="fs-loader-grain"></div>
+
+  <div class="fs-loader-content">
+    <div class="fs-loader-kicker">EST. 2026 &nbsp;·&nbsp; FATHER &amp; SON</div>
+
+    <div class="fs-loader-hero">
+      <div class="fs-bottle fs-bottle-left">
+        <img src="uploads/Achilles.jpg" alt="" aria-hidden="true">
+      </div>
+
+      <div class="fs-wordmark">
+        <div class="fs-word fs-word-father">FATHER</div>
+        <div class="fs-ampersand">&amp;</div>
+        <div class="fs-word fs-word-son">SON</div>
+      </div>
+
+      <div class="fs-bottle fs-bottle-right">
+        <img src="uploads/Debonair.jpg" alt="" aria-hidden="true">
+      </div>
+    </div>
+
+    <div class="fs-loader-rule"></div>
+
+    <p class="fs-loader-tagline">Scents that become part of the story.</p>
+
+    <div class="fs-loader-progress">
+      <div class="fs-loader-progress-track">
+        <div class="fs-loader-progress-fill" id="slFill"></div>
+      </div>
+      <div class="fs-loader-progress-meta">
+        <span id="slStatus">Preparing your collection</span>
+        <span><span id="slCount">0</span>%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="fs-loader-corner fs-loader-corner-tl">F&amp;S</div>
+  <div class="fs-loader-corner fs-loader-corner-br">FRAGRANCE · MEMORY · LEGACY</div>
+</div>
+
+<!-- ════ DISCLAIMER MODAL ════════════════════════════ -->
+<div id="disc-modal" role="dialog" aria-modal="true" aria-labelledby="discHeading">
+  <div class="disc-backdrop" id="discBackdrop"></div>
+  <div class="disc-card">
+    <div class="disc-card__topline"></div>
+    <div class="disc-card__body">
+
+      <div class="disc-card__eyebrow">
+        <span class="disc-card__eyebrow-label">Student Academic Project</span>
+        <div class="disc-card__eyebrow-rule"></div>
+      </div>
+
+      <img src="assets/logo-father-and-son.png" alt="Father and Son" class="disc-card__logo">
+
+      <h2 class="disc-card__heading" id="discHeading">A note before<br>you explore.</h2>
+      <div class="disc-card__rule"></div>
+
+      <div class="disc-card__paras">
+        <p class="disc-card__para">
+          <strong>Father and Son is a student academic project</strong> created for educational purposes only. It is not a real business, and no actual transactions take place on this website.
+        </p>
+        <p class="disc-card__para">
+          All brand names, logos, images, and product references belong to their <strong>respective owners</strong>. We make no claim of ownership over any third-party intellectual property displayed on this site.
+        </p>
+        <p class="disc-card__para">
+          This website is <strong>not affiliated with, sponsored by, or endorsed by</strong> any of the brands featured. If you are a rights holder and wish to have content removed, please contact us and we will act immediately.
+        </p>
+      </div>
+
+    </div><!-- /.disc-card__body -->
+
+    <!-- Marquee ticker (brand-wrapper style) -->
+    <div class="disc-card__ticker">
+      <div class="disc-card__ticker-track">
+                  <span class="disc-card__ticker-item">Student Academic Project</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">For Educational Use</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Real Transactions</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Not A Real Business</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">All Brands Are Third-Party</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Affiliation Or Endorsement</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Content Used For Learning Only</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Student Academic Project</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">For Educational Use</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Real Transactions</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Not A Real Business</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">All Brands Are Third-Party</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Affiliation Or Endorsement</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Content Used For Learning Only</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Student Academic Project</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">For Educational Use</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Real Transactions</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Not A Real Business</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">All Brands Are Third-Party</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">No Affiliation Or Endorsement</span>
+          <span class="disc-card__ticker-sep"></span>
+                  <span class="disc-card__ticker-item">Content Used For Learning Only</span>
+          <span class="disc-card__ticker-sep"></span>
+              </div>
+    </div>
+
+    <div class="disc-card__footer">
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <a href="discover-more_external.html" class="disc-about-link" id="discAbout">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><circle cx="8" cy="8" r="6"/><line x1="8" y1="7" x2="8" y2="11"/><circle cx="8" cy="5.2" r=".5" fill="currentColor" stroke="none"/></svg>
+          About Us
+        </a>
+        <a href="contact-us_external.html" class="disc-about-link">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="13" height="13"><rect x="2" y="3" width="12" height="10" rx="1.5"/><polyline points="2,3 8,9 14,3"/></svg>
+          Contact &amp; References
+        </a>
+      </div>
+      <button class="disc-btn" id="discAccept" aria-label="Accept and enter">
+        I Understand
+        <svg class="disc-btn__arrow" viewBox="0 0 16 16"><line x1="2" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════ NAVBAR ══════════════════════════════════════ -->
+<nav class="navbar" id="mainNav">
+  <div class="hamburger-wrap">
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="hamburger-menu" id="hamburgerMenu">
+      <span class="hamburger-menu__label">Explore</span>
+      <a href="#" onclick="event.preventDefault();openShopDrop()">All Perfumes</a>
+      <a href="#favorites" class="js-menu-scroll" data-slide="0" data-target="favorites">Customer Favorites</a>
+      <a href="#favorites" class="js-menu-scroll" data-slide="1" data-target="favorites">New Arrivals</a>
+      <div class="hamburger-menu__divider"></div>
+      <span class="hamburger-menu__label">About</span>
+      <a href="#choose">Why Choose Us</a>
+      <a href="#testimonials">Client Stories</a>
+    </nav>
+  </div>
+
+  <div class="navbar__logo">
+    <a href="home_external.html"><img src="assets/logo-father-and-son.png" alt="Father and Son"></a>
+  </div>
+
+  <div class="navbar__icons">
+
+    <!-- ── DESKTOP: icons shown directly ── -->
+    <!-- ── MOBILE: wrapped in a toggle dropdown ── -->
+
+    <!-- Mobile-only toggle button (chevron down/up) -->
+    <button class="mobile-icons-toggle" id="mobileIconsToggle" aria-label="Toggle icons" aria-expanded="false">
+      <svg class="mobile-icons-toggle__chevron" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </button>
+
+    <!-- Wrapper: icons live here; on desktop = plain flex row, on mobile = dropdown panel -->
+    <div class="mobile-icons-wrap" id="mobileIconsWrap">
+      <div class="mobile-icons-panel" id="mobileIconsPanel">
+
+        <!-- Perfumes — opens dropdown -->
+        <button class="nav-icon" id="shopDropBtn" aria-label="Browse Perfumes" aria-expanded="false">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="nav-icon__svg" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="12" rx="2"/><rect x="10" y="5" width="4" height="4" rx="0.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="10" y1="2" x2="14" y2="2"/></svg>        </button>
+
+        <!-- Cart opens sidebar -->
+        <button class="nav-icon cart-wrap" id="cartSidebarToggle" aria-label="Open cart">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="nav-icon__svg" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>          <span class="cart-badge" id="cartBadge"></span>
+        </button>
+
+                  <a class="nav-icon" id="navLoginLink" href="login_external.html" aria-label="Login">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="nav-icon__svg" focusable="false" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>          </a>
+        <div class="acct-dd" id="acctDd" style="display:none;">
+          <button class="nav-icon" id="acctDdBtn" type="button" aria-label="Account" aria-expanded="false">
+            <span class="acct-dd__avatar" id="acctAvatar">A</span>
+          </button>
+          <div class="acct-dd__panel" id="acctDdPanel">
+            <p class="acct-dd__name" id="acctName">—</p>
+            <p class="acct-dd__email" id="acctEmail">—</p>
+            <a href="order_history_external.html">My Orders</a>
+            <a href="cart_external.html">My Cart</a>
+            <a href="#" id="logoutLink">Log Out</a>
+          </div>
+        </div>
+        
+      </div><!-- /.mobile-icons-panel -->
+    </div><!-- /.mobile-icons-wrap -->
+
+  </div><!-- /.navbar__icons -->
+</nav>
+
+<!-- ── USER ACCOUNT MODAL ── -->
+
+<!-- ════ SHOP DROPDOWN ═══════════════════════════ -->
+<div class="shop-drop" id="shopDrop" role="region" aria-label="Shop perfumes">
+
+  <!-- Top bar -->
+  <div class="shop-drop__bar">
+    <span class="shop-drop__heading">Perfumes</span>
+    <input class="shop-drop__search" id="shopSearch" type="text" placeholder="Search perfumes…">
+    <button class="shop-drop__cart-btn" id="shopDropCartBtn" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" width="20" height="20"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="shop-drop__cart-badge" id="shopDropCartBadge"></span>
+    </button>
+  </div>
+
+  <!-- Mobile category pills (≤480px, shown instead of sidebar) — populated by JS -->
+  <div class="shop-mobile-cats" id="shopMobileCats"></div>
+
+  <!-- Body -->
+  <div class="shop-drop__body">
+
+    <!-- Sidebar — 100% dynamic from DB, all groups including Brands -->
+    <aside class="shop-drop__sidebar">
+      <p class="sd-label">Shop By</p>
+
+      
+    </aside>
+
+    <!-- Carousel -->
+    <div class="shop-drop__grid-wrap">
+      <div class="shop-carousel">
+        <div class="shop-scroll-zone shop-scroll-zone--left"  id="shopZoneLeft"></div>
+        <div class="shop-carousel__track" id="shopGrid">
+          <div class="shop-drop__empty">Loading…</div>
+        </div>
+        <div class="shop-scroll-zone shop-scroll-zone--right" id="shopZoneRight"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CART SIDEBAR ════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping cart">
+  <div class="cart-sidebar__head">
+    <div class="cart-sidebar__title-wrap">
+      <span class="cart-sidebar__title">Your Cart</span>
+      <span class="cart-sidebar__count" id="cartSidebarCount"></span>
+    </div>
+    <button class="cart-sidebar__close" id="cartSidebarClose" aria-label="Close">&#x2715;</button>
+  </div>
+  <div class="cart-sidebar__body" id="cartSidebarBody">
+    <div class="cart-empty">
+      <div class="cart-empty__icon">&#128722;</div>
+      <p class="cart-empty__text">Your cart is empty</p>
+      <p class="cart-empty__sub">Add something beautiful to get started.</p>
+    </div>
+  </div>
+  <div class="cart-sidebar__foot" id="cartSidebarFoot" style="display:none;">
+    <div class="cart-sidebar__subtotal">
+      <span class="cart-sidebar__subtotal-label">Subtotal</span>
+      <span class="cart-sidebar__subtotal-val" id="cartSidebarSubtotal">₱0.00</span>
+    </div>
+    <a href="cart_external.html" class="cart-sidebar__cta">View Full Cart &amp; Checkout →</a>
+    <button class="cart-sidebar__continue" id="cartSidebarContinue">Continue Shopping</button>
+  </div>
+</aside>
+
+<!-- ════ HERO ════════════════════════════════════ -->
+<section class="hero">
+  <video class="hero__video" id="heroBg"  muted playsinline preload="auto" style="z-index:0;"></video>
+  <video class="hero__video"               id="heroBg2" muted playsinline preload="auto" style="z-index:1;"></video>
+  <div class="hero__blackout" id="heroBgBlackout"></div>
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <div class="hero__eyebrow">
+      <span class="hero__eyebrow-line"></span>
+      <span class="hero__label">Est. 2026 &nbsp;&mdash;&nbsp; Timeless Allure</span>
+    </div>
+    <h1 class="hero__title">
+      <span class="hero__title-line"><span class="hero__title-line-inner l1">The World's</span></span>
+      <span class="hero__title-line"><span class="hero__title-line-inner l2">Finest Scents</span></span>
+      <span class="hero__title-line"><span class="hero__title-line-inner l3">In One Place.</span></span>
+    </h1>
+    <p class="hero__subtitle">Curated niche fragrances for those<br>who carry themselves with intention.</p>
+    <div class="hero__cta-row">
+      <button class="hero__btn" onclick="openShopDrop()"><span>Explore Collection</span></button>
+      <a class="hero__link" href="#favorites" onclick="event.preventDefault();document.querySelector('[data-slide=\'0\']').click();document.getElementById('favorites').scrollIntoView({behavior:'smooth'});">Our Favorites</a>
+    </div>
+  </div>
+  <div class="hero__scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="hero__scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════ BRAND MARQUEE ═══════════════════════════ -->
+<div class="brand-marquee" aria-hidden="true">
+  <div class="brand-marquee__track">
+                  <span class="brand-marquee__item">CREED</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">EMPORIO ARMANI</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">JEAN PAUL GAULTIER</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">LOUIS VUITTON</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">MFK</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">VERSACE</span>
+        <span class="brand-marquee__sep"></span>
+                        <span class="brand-marquee__item">CREED</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">EMPORIO ARMANI</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">JEAN PAUL GAULTIER</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">LOUIS VUITTON</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">MFK</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">VERSACE</span>
+        <span class="brand-marquee__sep"></span>
+                        <span class="brand-marquee__item">CREED</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">EMPORIO ARMANI</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">JEAN PAUL GAULTIER</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">LOUIS VUITTON</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">MFK</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">VERSACE</span>
+        <span class="brand-marquee__sep"></span>
+                        <span class="brand-marquee__item">CREED</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">EMPORIO ARMANI</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">JEAN PAUL GAULTIER</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">LOUIS VUITTON</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">MFK</span>
+        <span class="brand-marquee__sep"></span>
+              <span class="brand-marquee__item">VERSACE</span>
+        <span class="brand-marquee__sep"></span>
+            </div>
+</div>
+
+<!-- ════ PRODUCT SLIDER ══════════════════════════ -->
+<section class="section" id="favorites" style="background:#eeede9;">
+  <div class="featured__header anim d-flex flex-wrap align-items-end justify-content-between">
+    <div class="featured__left">
+      <span class="featured__eyebrow">Our Selection</span>
+      <h2 class="featured__title" id="sliderTitle">Customer Favorites</h2>
+    </div>
+    <div style="display:flex;align-items:center;gap:4px;">
+      <div class="featured__tabs">
+        <button class="featured__tab active" data-slide="0">Customer Favorites</button>
+        <button class="featured__tab" data-slide="1">New Arrivals</button>
+      </div>
+      <a href="#" class="featured__browse" onclick="event.preventDefault();openShopDrop()">Browse All</a>
+    </div>
+  </div>
+  <div class="featured__rule"></div>
+  <div class="slider-viewport anim">
+    <div class="slider-track">
+      <div class="slider-slide active">
+        <div class="products row row-cols-2 row-cols-md-3 row-cols-lg-5 g-0"><div class="product-card">
+<a href="product_external.html?id=1" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Achilles.jpg" alt="Achilles" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=1" style="text-decoration:none;color:inherit;"><p class="product-card__name">Achilles</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="1" data-name="Achilles" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Achilles.jpg"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=2" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Amethyste.jpg" alt="Amethyste" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=2" style="text-decoration:none;color:inherit;"><p class="product-card__name">Amethyste</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="2" data-name="Amethyste" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Amethyste.jpg"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=3" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Call_Me.jpg" alt="Call Me" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=3" style="text-decoration:none;color:inherit;"><p class="product-card__name">Call Me</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="3" data-name="Call Me" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Call_Me.jpg"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=4" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Canella.png" alt="Canella" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=4" style="text-decoration:none;color:inherit;"><p class="product-card__name">Canella</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="4" data-name="Canella" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Canella.png"><span>Add To Cart</span></button>
+</div>        </div>
+      </div>
+      <div class="slider-slide">
+        <div class="products row row-cols-2 row-cols-md-3 row-cols-lg-5 g-0"><div class="product-card">
+<a href="product_external.html?id=5" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Connoisseur.jpg" alt="Connoisseur" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=5" style="text-decoration:none;color:inherit;"><p class="product-card__name">Connoisseur</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="5" data-name="Connoisseur" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Connoisseur.jpg"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=6" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Crimson.png" alt="Crimson" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=6" style="text-decoration:none;color:inherit;"><p class="product-card__name">Crimson</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="6" data-name="Crimson" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Crimson.png"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=7" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Debonair.jpg" alt="Debonair" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=7" style="text-decoration:none;color:inherit;"><p class="product-card__name">Debonair</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="7" data-name="Debonair" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Debonair.jpg"><span>Add To Cart</span></button>
+</div><div class="product-card">
+<a href="product_external.html?id=8" class="product-card__img-wrap" style="display:block;text-decoration:none;">
+<img src="uploads/Dylan.jpg" alt="Dylan" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.parentElement.classList.add('product-card__img-wrap--no-img');var fb=document.createElement('div');fb.className='product-card__name-fallback';fb.textContent=this.alt;this.parentElement.insertBefore(fb,this);">
+<div class="product-card__hint">View Product</div>
+</a>
+<div class="product-card__info-wrap">
+<a href="product_external.html?id=8" style="text-decoration:none;color:inherit;"><p class="product-card__name">Dylan</p></a>
+<p class="product-card__sub">FATHER AND SON</p>
+<p class="product-card__stock">20 in stock</p>
+</div>
+<div class="product-card__bottom">
+<span class="product-card__price">&#8369;&nbsp;899.00</span>
+<div class="product-card__qty">
+<button class="qty-btn" onclick="changeQty(this,-1)">&#8722;</button>
+<input type="number" value="1" min="1" max="20" class="quantity-input">
+<button class="qty-btn" onclick="changeQty(this,1)">&#43;</button>
+</div>
+</div>
+<button class="product-card__add add-to-cart" data-id="8" data-name="Dylan" data-price="899" data-brand="FATHER AND SON" data-img="uploads/Dylan.jpg"><span>Add To Cart</span></button>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ MANIFESTO STRIP ═════════════════════════ -->
+<div class="homepage-manifesto anim">
+  <span class="homepage-manifesto__quote-mark" aria-hidden="true">&ldquo;</span>
+  <div class="homepage-manifesto__inner">
+    <div class="homepage-manifesto__line"></div>
+    <p class="homepage-manifesto__text">
+      &ldquo;Scent is the only sense<br>
+      <em>that bypasses reason</em><br>
+      entirely.&rdquo;
+    </p>
+    <p class="homepage-manifesto__attr">The Father and Son Philosophy</p>
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<section class="section" id="choose">
+  <div class="choose__head anim row g-0">
+    <div class="col-md-6">
+      <span class="choose__sublabel">THE FRAGRANCE HOUSE FOR THE DISCERNING FEW</span>
+      <h2 class="choose__title">Why<br>Choose Us</h2>
+    </div>
+    <p class="choose__head-desc col-md-6">Four reasons the world's most discerning collectors trust Father and Son with every purchase.</p>
+  </div>
+  <div class="choose__grid row row-cols-1 row-cols-md-2 g-0">
+    <div class="choose-card anim">
+      <div class="choose-card__icon"><svg viewBox="0 0 24 24"><path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V7L12 2z"/></svg></div>
+      <span class="choose-card__num">01</span>
+      <div class="choose-card__title">Guaranteed Authentic</div>
+      <div class="choose-card__divider"></div>
+      <p class="choose-card__text">We source exclusively through authorised channels. Every product is verified. You will never receive a fake from Father and Son.</p>
+    </div>
+    <div class="choose-card anim">
+      <div class="choose-card__icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-4-7-8-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+      <span class="choose-card__num">02</span>
+      <div class="choose-card__title">Rare Selection</div>
+      <div class="choose-card__divider"></div>
+      <p class="choose-card__text">We carry niche and hard-to-find fragrances from the world's most respected houses — curated, not just collected.</p>
+    </div>
+    <div class="choose-card anim">
+      <div class="choose-card__icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+      <span class="choose-card__num">03</span>
+      <div class="choose-card__title">Expert Advice</div>
+      <div class="choose-card__divider"></div>
+      <p class="choose-card__text">Our team lives and breathes fragrance. We help you navigate notes, longevity, and occasion to find your perfect match.</p>
+    </div>
+    <div class="choose-card anim">
+      <div class="choose-card__icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+      <span class="choose-card__num">04</span>
+      <div class="choose-card__title">Seamless Experience</div>
+      <div class="choose-card__divider"></div>
+      <p class="choose-card__text">Effortless browsing, secure checkout, careful packaging, fast delivery. Shopping with us should feel as refined as the scent itself.</p>
+    </div>
+  </div>
+  <div class="choose__bottom anim">
+    <p class="choose__tagline">Scent is the only sense that bypasses reason entirely.</p>
+    <a href="discover-more_external.html" class="choose__discover"><span>DISCOVER MORE</span></a>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ════ REVIEWS ═════════════════════════════════ -->
+<section class="reviews-section" id="testimonials">
+  <div class="reviews-inner row g-0">
+
+    <!-- Left: title + nav -->
+    <div class="reviews-left anim col-md-6">
+      <div>
+        <div class="reviews-eyebrow">
+          <span class="reviews-eyebrow__line"></span>
+          <span class="reviews-eyebrow__text">Client Stories</span>
+        </div>
+        <h2 class="reviews__title">Stories From<br>Our Clients</h2>
+      </div>
+
+      <div class="reviews-counter-row">
+        <div>
+          <div class="reviews-progress">
+            <div class="reviews-progress__bar" id="reviewsBar" style="width:14%"></div>
+          </div>
+          <p class="reviews-counter"><strong id="reviewsCur">01</strong>&nbsp;/&nbsp;07</p>
+        </div>
+        <div class="reviews-nav" id="reviewsDotsWrap"><button class="reviews-dot active" data-index="0" aria-label="Review 1"></button><button class="reviews-dot" data-index="1" aria-label="Review 2"></button><button class="reviews-dot" data-index="2" aria-label="Review 3"></button><button class="reviews-dot" data-index="3" aria-label="Review 4"></button><button class="reviews-dot" data-index="4" aria-label="Review 5"></button><button class="reviews-dot" data-index="5" aria-label="Review 6"></button><button class="reviews-dot" data-index="6" aria-label="Review 7"></button></div>
+      </div>
+    </div>
+
+    <!-- Right: quote -->
+    <div class="reviews-right anim col-md-6">
+      <span class="reviews-open-quote">&ldquo;</span>
+      <p class="reviews-quote__text visible" id="reviewsText"></p>
+      <div class="reviews-author visible" id="reviewsAuthor">
+        <span class="reviews-author__line"></span>
+        <span class="reviews-author__name" id="reviewsName"></span>
+        <span class="reviews-author__sep">/</span>
+        <span class="reviews-author__loc" id="reviewsLoc"></span>
+      </div>
+      <div class="reviews-arrows">
+        <button class="reviews-arrow" id="reviewsPrev" aria-label="Previous">
+          <svg viewBox="0 0 14 14"><polyline points="9 2 4 7 9 12"/></svg>
+        </button>
+        <button class="reviews-arrow" id="reviewsNext" aria-label="Next">
+          <svg viewBox="0 0 14 14"><polyline points="5 2 10 7 5 12"/></svg>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+</section>
+
+<!-- ════ FOOTER ══════════════════════════════════ -->
+<footer class="footer">
+
+  <!-- Tagline hero -->
+  <div class="footer__hero">
+    <p class="footer__tagline">Crafted for those<br>who make<br>an impression.</p>
+    <div class="footer__stamp">
+      <span>Since 2026</span>
+      <span>Manila, PH</span>
+      <span>100% Authentic</span>
+    </div>
+  </div>
+
+  <!-- Body: brand + columns -->
+  <div class="footer__body row g-0">
+
+    <!-- Brand col -->
+    <div class="footer__col col-12 col-md-6 col-lg-4">
+      <img class="footer__brand-logo" src="assets/logo-father-and-son.png" alt="Father and Son">
+      <p class="footer__brand-desc">Curated niche fragrances sourced exclusively through authorised channels. 100% authentic, always.</p>
+      <p class="footer__brand-tagline">&ldquo;Scent is the only sense<br>that bypasses reason entirely.&rdquo;</p>
+    </div>
+
+    <!-- Shop — dynamically populated from category_groups table -->
+    <div class="footer__col col-6 col-md-3 col-lg-2">
+      <p class="footer__col-title">Shop</p>
+      <ul class="footer__links">
+        <li><a href="#" onclick="event.preventDefault();document.querySelector('[data-slide=\'1\']')?.click();document.getElementById('favorites')?.scrollIntoView({behavior:'smooth'});">New Arrivals</a></li>
+                          <!-- Fallback links shown when no category_groups exist in the DB yet -->
+          <li><a href="#" onclick="event.preventDefault();window.openShopDrop()">All Perfumes</a></li>
+              </ul>
+    </div>
+
+    <!-- Account -->
+    <div class="footer__col col-6 col-md-3 col-lg-2">
+      <p class="footer__col-title">Account</p>
+      <ul class="footer__links">
+                  <li><a href="login_external.html">Log In</a></li>
+          <li><a href="register_external.html">Register</a></li>
+              </ul>
+    </div>
+
+    <!-- Help -->
+    <div class="footer__col col-6 col-md-3 col-lg-2">
+      <p class="footer__col-title">Help &amp; Info</p>
+      <ul class="footer__links">
+        <li><a href="discover-more_external.html">About Us</a></li>
+        <li><a href="contact-us_external.html">Contact Us</a></li>
+        <li><a href="order_history_external.html">Track My Order</a></li>
+        <li><a href="faqs_external.html">FAQs</a></li>
+        <li><a href="returns_external.html">Returns &amp; Exchanges</a></li>
+        <li><a href="authenticity_external.html">Authenticity Guarantee</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom strip -->
+  <div class="footer__bottom d-flex flex-wrap align-items-center justify-content-between">
+    <span class="footer__authentic">Academic Project — Not a Real Business</span>
+    <span class="footer__copyright">
+      <img src="assets/logo-father-and-son.png" alt="">
+      &copy; 2026 Father and Son. For Educational Use Only.
+    </span>
+  </div>
+
+</footer>
+
+<div class="cursor-follower" id="cursorFollower">
+  <span class="cursor-follower__label">View</span>
+</div>
+<button id="scrollTopBtn" aria-label="Back to top">
+  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="13" height="13">
+    <line x1="8" y1="13" x2="8" y2="3"/>
+    <polyline points="4 7 8 3 12 7"/>
+  </svg>
+</button>
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery removed — all $.ajax replaced with fetch(). If assets/ag-jquery.js uses $, replace it too. -->
+<script src="assets/ag-jquery.js"></script>
+<script src="assets/ag.js"></script>
+
+<!-- ── SIGN-OUT FADE VEIL ── -->
+
+<div id="signout-veil"></div>
+
+  <script src="home.js"></script>
+</body>
+</html>

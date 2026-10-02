@@ -1,0 +1,95 @@
+<!-- Static Bootstrap prototype page (no backend). Registration is simulated
+     client-side via localStorage since there is no PHP/database here —
+     see register.js. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account — Father and Son</title>
+<link rel="icon" type="image/png" href="assets/logo-father-and-son.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="register.css">
+</head>
+<body>
+<div class="page-veil" id="pageVeil"></div>
+<div class="page row g-0">
+
+  <!-- ── LEFT POSTER ── -->
+  <div class="poster col-md-6">
+    <video class="poster__img" src="assets/video-bg-LV1.mp4" autoplay muted loop playsinline></video>
+    <div class="poster__overlay"></div>
+    <div class="poster__top">
+      <div class="poster__brand">Father and Son</div>
+      <div class="poster__tagline">Est. 2026 &nbsp;·&nbsp; Timeless Allure</div>
+    </div>
+    <div class="poster__bottom">
+      <div class="poster__bottom-line"></div>
+      <p class="poster__quote">"The first impression is the scent you leave behind."</p>
+    </div>
+  </div>
+
+  <!-- ── RIGHT FORM ── -->
+  <div class="form-panel col-md-6">
+    <div class="form-logo">
+      <img src="assets/logo-father-and-son.png" alt="Father and Son">
+    </div>
+
+    <p class="form-eyebrow">Join Father and Son</p>
+    <h1 class="form-title">Create Account</h1>
+
+    <form autocomplete="on" id="registerForm" novalidate>
+
+      <div class="field">
+        <input class="field-input" type="text" name="fullname" id="regFullname" placeholder="Full Name" autocomplete="name">
+        <label class="field-label" for="regFullname">Full Name</label>
+      </div>
+
+      <div class="field">
+        <input class="field-input" type="email" name="email" id="regEmail" placeholder="Email" autocomplete="email">
+        <label class="field-label" for="regEmail">Email Address</label>
+      </div>
+
+      <div class="field">
+        <input class="field-input" type="password" name="password" id="regPassword" placeholder="Password" autocomplete="new-password">
+        <label class="field-label" for="regPassword">Password <span style="font-size:9px;opacity:.45;font-style:italic;">(min 8 chars)</span></label>
+      </div>
+
+      <div class="field">
+        <input class="field-input" type="password" name="confirm_password" id="regConfirmPassword" placeholder="Confirm Password" autocomplete="new-password">
+        <label class="field-label" for="regConfirmPassword">Confirm Password</label>
+      </div>
+
+      <div class="actions">
+        <button class="btn-submit" type="submit">Create Account</button>
+
+        <div class="divider"><span>or continue with</span></div>
+
+        <div class="social-row">
+          <a href="#" class="social-btn" id="googleBtn">
+            <svg width="16" height="16" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#EA4335" d="M24 9.5c3.14 0 5.95 1.08 8.17 2.85l6.08-6.08C34.5 3.03 29.57 1 24 1 14.82 1 7.01 6.48 3.69 14.26l7.1 5.52C12.46 13.38 17.77 9.5 24 9.5z"/><path fill="#4285F4" d="M46.52 24.5c0-1.64-.15-3.22-.42-4.75H24v9h12.7c-.55 2.96-2.2 5.47-4.68 7.15l7.18 5.58C43.36 37.27 46.52 31.35 46.52 24.5z"/><path fill="#FBBC05" d="M10.79 28.22A14.54 14.54 0 0 1 9.5 24c0-1.47.25-2.89.69-4.22l-7.1-5.52A23.93 23.93 0 0 0 0 24c0 3.87.93 7.52 2.56 10.74l8.23-6.52z"/><path fill="#34A853" d="M24 47c5.57 0 10.24-1.84 13.65-5l-7.18-5.58C28.73 37.67 26.47 38.5 24 38.5c-6.23 0-11.54-3.88-13.21-9.28l-8.23 6.52C6.01 43.52 14.42 47 24 47z"/></svg>
+            Google
+          </a>
+          <a href="#" class="social-btn" id="facebookBtn">
+            <img src="assets/Vector.svg" alt="Facebook">
+            Facebook
+          </a>
+        </div>
+      </div>
+    </form>
+
+    <p class="form-footer">
+      Already have an account? <a href="login_external.html" id="toLogin">Sign in here</a><br>
+      <a href="home_external.html" id="backToStore" style="margin-top:6px;display:inline-block;border:none;color:rgba(0,0,0,.4);font-size:11px;letter-spacing:.08em;">← Back to store</a>
+    </p>
+  </div>
+
+</div>
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="register.js"></script>
+</body>
+</html>
