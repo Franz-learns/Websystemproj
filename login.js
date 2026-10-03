@@ -87,8 +87,14 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   // Mock auth — this is a static prototype with no real database.
   // Any well-formed email/password combo signs you in.
   setTimeout(() => {
-    const fullname = email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
-    localStorage.setItem('fas_user', JSON.stringify({ email, fullname }));
+    // Preserve an existing mock password (e.g. one changed in Settings) if this
+    // email already has a session; otherwise the typed password becomes it.
+    let existing = null;
+    try { existing = JSON.parse(localStorage.getItem('fas_user') || 'null'); } catch (e) {}
+    const fullname = (existing && existing.email === email && existing.fullname)
+      || email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    const finalPass = (existing && existing.email === email && existing.password) || pass;
+    localStorage.setItem('fas_user', JSON.stringify({ email, fullname, password: finalPass }));
     sessionStorage.setItem('sg_from_login', '1');
     fadeToPage('home_external.html');
   }, 500);

@@ -99,7 +99,7 @@ document.getElementById('registerForm').addEventListener('submit', function(e) {
 
   // Mock account creation — no real database in this static prototype.
   setTimeout(() => {
-    localStorage.setItem('fas_user', JSON.stringify({ email, fullname: name }));
+    localStorage.setItem('fas_user', JSON.stringify({ email, fullname: name, password: pass }));
     showToast('Account created — welcome to Father and Son.', true);
     setTimeout(() => {
       sessionStorage.setItem('sg_from_register', '1');

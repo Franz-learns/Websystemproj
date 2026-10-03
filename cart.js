@@ -198,10 +198,21 @@ function applyAuthState() {
   }
 }
 
+function prefillShipping() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem('fas_shipping') || '{}'); } catch (e) {}
+  const map = { firstName: 'first_name', lastName: 'last_name', street: 'street_address', city: 'city', postal: 'zip_code' };
+  Object.entries(map).forEach(([fieldId, key]) => {
+    const el = document.getElementById(fieldId);
+    if (el && saved[key] && !el.value) el.value = saved[key];
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   renderCart();
   updateCartBadge();
   applyAuthState();
+  prefillShipping();
 
   const ddBtn = document.getElementById('userDdBtn');
   const ddPanel = document.getElementById('userDdPanel');

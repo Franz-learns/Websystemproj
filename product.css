@@ -662,3 +662,80 @@
     .footer__hero { padding: 40px 16px 36px; }
   }
   </style>
+
+  /* ── HAMBURGER MENU (added for the bootstrap-static build) ── */
+  .hamburger-wrap {
+    position: relative;
+    z-index: 10;
+    transition: transform .55s var(--ease);
+  }
+  .hamburger-btn {
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: none; border: none; cursor: pointer;
+    width: 36px; height: 36px; padding: 0; gap: 0;
+    opacity: 0; animation: navChildReveal .55s var(--ease) .45s forwards;
+    position: relative;
+  }
+  .hamburger-btn span {
+    display: block; width: 20px; height: 1px; background: var(--black);
+    transition: transform .5s cubic-bezier(.77,0,.18,1), opacity .3s ease, width .5s cubic-bezier(.77,0,.18,1);
+    transform-origin: center center;
+    position: absolute; left: 50%; top: 50%; margin-left: -10px;
+  }
+  .hamburger-btn span:nth-child(1) { transform: translateY(-5px); }
+  .hamburger-btn span:nth-child(2) { transform: translateY(5px); }
+  /* X state — silky single motion into a precise cross */
+  .hamburger-btn.open span:nth-child(1) { transform: translateY(0) rotate(45deg); width: 22px; margin-left: -11px; }
+  .hamburger-btn.open span:nth-child(2) { transform: translateY(0) rotate(-45deg); width: 22px; margin-left: -11px; }
+  .hamburger-menu {
+    display: flex; position: absolute; top: calc(100% + 14px); left: 0;
+    background: #080808; min-width: 220px; flex-direction: column; padding: 10px 0;
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 32px 64px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.03);
+    pointer-events: none;
+    clip-path: inset(0 0 100% 0); transform: translateY(-4px);
+    transition: clip-path .38s var(--ease), transform .38s var(--ease);
+  }
+  .hamburger-menu.open { clip-path: inset(0 0 0% 0); transform: translateY(0); pointer-events: auto; }
+  .hamburger-menu a {
+    font-family: var(--font-sans); font-weight: 300; font-size: 14px; letter-spacing: .08em;
+    color: rgba(255,255,255,.84); text-decoration: none; padding: 13px 24px;
+    display: block; opacity: 0; transform: translateX(-6px);
+    position: relative; overflow: hidden;
+    transition: color .28s var(--ease), padding-left .3s var(--ease), background .25s, letter-spacing .3s var(--ease), opacity .28s var(--ease), transform .28s var(--ease);
+  }
+  /* Left glow bar slides in */
+  .hamburger-menu a::before {
+    content: '';
+    position: absolute; left: 0; top: 50%;
+    width: 2px; height: 0;
+    background: rgba(255,255,255,.7);
+    transform: translateY(-50%);
+    box-shadow: 0 0 8px rgba(255,255,255,.5);
+    transition: height .28s var(--ease);
+    pointer-events: none;
+  }
+  /* Shimmer sweep */
+  .hamburger-menu a::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.05) 50%, transparent 70%);
+    transform: translateX(-200%);
+    transition: transform .55s var(--ease);
+    pointer-events: none;
+  }
+  .hamburger-menu a:hover::before { height: 18px; }
+  .hamburger-menu a:hover::after  { transform: translateX(200%); }
+  /* nth-of-type counts only <a> tags, ignoring span labels and dividers */
+  .hamburger-menu.open a:nth-of-type(1) { opacity: 1; transform: translateX(0); transition-delay: .04s; }
+  .hamburger-menu.open a:nth-of-type(2) { opacity: 1; transform: translateX(0); transition-delay: .08s; }
+  .hamburger-menu.open a:nth-of-type(3) { opacity: 1; transform: translateX(0); transition-delay: .12s; }
+  .hamburger-menu.open a:nth-of-type(4) { opacity: 1; transform: translateX(0); transition-delay: .16s; }
+  .hamburger-menu.open a:nth-of-type(5) { opacity: 1; transform: translateX(0); transition-delay: .20s; }
+  .hamburger-menu.open a:nth-of-type(6) { opacity: 1; transform: translateX(0); transition-delay: .24s; }
+  .hamburger-menu a:hover { color: var(--white); padding-left: 34px; background: rgba(255,255,255,.03); letter-spacing: .14em; }
+  .hamburger-menu__label {
+    font-family: var(--font-sans); font-size: 9px; letter-spacing: .28em; text-transform: uppercase;
+    color: rgba(255,255,255,.84); padding: 12px 24px 4px; display: block;
+  }
+  .hamburger-menu__divider { height: 1px; background: rgba(255,255,255,.06); margin: 6px 0; }

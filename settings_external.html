@@ -1,0 +1,213 @@
+<!-- Static Bootstrap prototype page (no backend). Password change and
+     shipping address are both simulated via localStorage — see settings.js.
+     Requires a mock sign-in ("fas_user"), same rule as the original PHP page. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — Father and Son</title>
+<link rel="icon" type="image/png" href="assets/logo-father-and-son.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="settings.css">
+</head>
+<body>
+
+<!-- ════ ANNOUNCE ════ -->
+<div class="announce" id="announce">
+  <span>100% Authentic &nbsp;&middot;&nbsp; Free Shipping &nbsp;&middot;&nbsp; Easy Returns</span>
+</div>
+
+<!-- ════ NAVBAR ════ -->
+<nav class="navbar" id="mainNav">
+  <div class="navbar__left">
+    <a href="home_external.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="15 18 9 12 15 6"/></svg>
+      Home
+    </a>
+  </div>
+  <div class="navbar__logo">
+    <a href="home_external.html"><img src="assets/logo-father-and-son.png" alt="Father and Son"></a>
+  </div>
+  <div class="navbar__right">
+    <a class="nav-icon" href="cart_external.html" aria-label="Cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="cart-badge" id="cartBadge"></span>
+    </a>
+    <div class="user-dd-wrap" id="userDdWrap">
+      <button class="nav-icon" id="userDdBtn" aria-label="Account" aria-expanded="false">
+        <span class="dd-avatar" id="ddAvatarNav" style="width:22px;height:22px;font-size:11px;">A</span>
+      </button>
+      <div class="user-dd-panel" id="userDdPanel" aria-hidden="true">
+        <div class="dd-header">
+          <div class="dd-avatar" id="ddAvatar">A</div>
+          <div class="dd-user-info">
+            <span class="dd-user-name" id="ddUserName">&mdash;</span>
+            <span class="dd-user-email" id="ddUserEmail">&mdash;</span>
+          </div>
+        </div>
+        <div class="dd-body">
+          <a class="dropdown-item active-item" href="settings_external.html">Settings</a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item" href="order_history_external.html">My Orders</a>
+          <hr class="dropdown-divider">
+          <a class="dropdown-item text-danger" href="#" id="logoutBtn">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ════ PAGE ════ -->
+<div class="s-page">
+
+  <div class="page-eyebrow"><span>Account</span></div>
+  <h1 class="page-title">Settings</h1>
+
+  <div class="settings-layout row g-0">
+
+    <!-- ── SIDEBAR ── -->
+    <nav class="settings-nav col-md-3" aria-label="Settings sections" id="settingsNav">
+      <div class="settings-nav__indicator" id="navIndicator"></div>
+      <button class="settings-nav__item" data-tab="password" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Change Password
+      </button>
+      <div class="settings-nav__divider"></div>
+      <button class="settings-nav__item" data-tab="shipping" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Shipping Address
+      </button>
+    </nav>
+
+    <!-- ── CONTENT ── -->
+    <div class="settings-panels col-md-9">
+
+      <!-- Change Password Panel -->
+      <div class="settings-panel" id="panel-password">
+        <div class="s-notice" id="passNotice" style="display:none;"></div>
+        <p class="panel-title">Change Password</p>
+        <p class="panel-desc">Update your account password. You'll need your current password to make changes. <em>(This is a static prototype — your password lives only in this browser's storage.)</em></p>
+        <form id="passForm" novalidate>
+          <div class="pass-stack">
+            <div class="form-group">
+              <div class="field-wrap">
+                <input class="form-input" type="password" id="oldPass" name="old_password"
+                       placeholder="Current Password" required autocomplete="current-password">
+                <label class="form-label form-required" for="oldPass">Current Password</label>
+              </div>
+              <span class="field-error" id="err-oldPass">Current password is incorrect.</span>
+            </div>
+            <div class="form-group">
+              <div class="field-wrap">
+                <input class="form-input" type="password" id="newPass" name="new_password"
+                       placeholder="New Password" required autocomplete="new-password">
+                <label class="form-label form-required" for="newPass">New Password</label>
+              </div>
+              <span class="field-error" id="err-newPass">Must be at least 6 characters.</span>
+            </div>
+            <div class="form-group">
+              <div class="field-wrap">
+                <input class="form-input" type="password" id="confirmPass" name="confirm_password"
+                       placeholder="Confirm New Password" required autocomplete="new-password">
+                <label class="form-label form-required" for="confirmPass">Confirm New Password</label>
+              </div>
+              <span class="field-error" id="err-confirmPass">Passwords do not match.</span>
+            </div>
+          </div>
+          <button type="submit" class="save-btn">
+            <span class="save-btn__spinner"></span>
+            <svg class="save-btn__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="save-btn__label">Update Password</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Shipping Address Panel -->
+      <div class="settings-panel" id="panel-shipping">
+        <div class="s-notice" id="shipNotice" style="display:none;"></div>
+        <p class="panel-title">Shipping Address</p>
+        <p class="panel-desc">Save your delivery details so they're automatically filled in at checkout.</p>
+        <form id="shippingForm" novalidate>
+          <div class="form-grid row g-0">
+            <div class="form-group col-md-6 pe-md-2">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_firstName" name="first_name"
+                       placeholder="First Name" autocomplete="given-name">
+                <label class="form-label form-required" for="s_firstName">First Name</label>
+              </div>
+              <span class="field-error" id="err-s_firstName">Please enter your first name.</span>
+            </div>
+            <div class="form-group col-md-6 ps-md-2">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_lastName" name="last_name"
+                       placeholder="Last Name" autocomplete="family-name">
+                <label class="form-label form-required" for="s_lastName">Last Name</label>
+              </div>
+              <span class="field-error" id="err-s_lastName">Please enter your last name.</span>
+            </div>
+            <div class="form-group col-12">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_company" name="company"
+                       placeholder="Company" autocomplete="organization">
+                <label class="form-label" for="s_company">Company
+                  <span style="font-size:9.5px;color:var(--gray-muted);letter-spacing:.04em">(optional)</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-group col-12">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_street" name="street_address"
+                       placeholder="Street Address" autocomplete="street-address">
+                <label class="form-label form-required" for="s_street">Street Address</label>
+              </div>
+              <span class="field-error" id="err-s_street">Please enter your street address.</span>
+            </div>
+            <div class="form-group col-md-6 pe-md-2">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_city" name="city"
+                       placeholder="City" autocomplete="address-level2">
+                <label class="form-label form-required" for="s_city">City</label>
+              </div>
+              <span class="field-error" id="err-s_city">Please enter your city.</span>
+            </div>
+            <div class="form-group col-md-6 ps-md-2">
+              <div class="field-wrap">
+                <input class="form-input" type="text" id="s_zip" name="zip_code"
+                       placeholder="Zip Code" autocomplete="postal-code">
+                <label class="form-label form-required" for="s_zip">Zip Code</label>
+              </div>
+              <span class="field-error" id="err-s_zip">Please enter your zip code.</span>
+            </div>
+          </div>
+          <button type="submit" class="save-btn">
+            <span class="save-btn__spinner"></span>
+            <svg class="save-btn__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <span class="save-btn__label">Save Address</span>
+          </button>
+        </form>
+      </div>
+
+    </div><!-- /settings-panels -->
+  </div><!-- /settings-layout -->
+
+</div><!-- /s-page -->
+
+<!-- ════ FOOTER ════ -->
+<footer class="c-footer">
+  <span class="c-footer__auth">100% Authentic &mdash; Guaranteed</span>
+  <span class="c-footer__copy">
+    <img src="assets/logo-father-and-son.png" alt="">
+    &copy; 2026 Father and Son. Student Academic Project.
+  </span>
+</footer>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="settings.js"></script>
+</body>
+</html>
