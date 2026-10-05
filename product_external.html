@@ -38,38 +38,38 @@
   </div>
 
   <div class="navbar__icons">
-    <div class="mobile-icons-wrap" id="mobileIconsWrap">
-      <div class="mobile-icons-panel" id="mobileIconsPanel">
-        <a class="nav-icon" href="home_external.html" aria-label="Shop">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="9" width="8" height="12" rx="2"/><rect x="10" y="5" width="4" height="4" rx="0.5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="10" y1="2" x2="14" y2="2"/></svg>
-        </a>
-        <button class="nav-icon cart-wrap" id="cartSidebarToggle" aria-label="Open cart">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-          <span class="cart-badge" id="cartBadge"></span>
-        </button>
-        <a class="nav-icon" id="navLoginLink" href="login_external.html" aria-label="Login">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </a>
-        <div class="user-dd-wrap" id="userDdWrap" style="display:none;position:relative;">
-          <button class="nav-icon" id="userDdBtn" aria-label="Account" aria-expanded="false">
-            <span id="ddAvatar" style="display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:#000;color:#fff;font-size:11px;">A</span>
-          </button>
-          <div class="user-dd-panel" id="userDdPanel" aria-hidden="true" style="position:absolute;right:0;top:130%;background:#fff;border:1px solid rgba(0,0,0,.1);min-width:200px;padding:14px;box-shadow:0 12px 32px rgba(0,0,0,.12);display:none;">
-            <p id="ddUserName" style="font-weight:600;font-size:13px;margin-bottom:2px;">—</p>
-            <p id="ddUserEmail" style="font-size:11px;color:rgba(0,0,0,.5);margin-bottom:10px;">—</p>
-            <a href="settings_external.html" style="display:block;font-size:12px;padding:6px 0;color:inherit;">Settings</a>
-            <a href="order_history_external.html" style="display:block;font-size:12px;padding:6px 0;color:inherit;">My Orders</a>
-            <a href="#" id="logoutBtn" style="display:block;font-size:12px;padding:6px 0;color:inherit;">Log Out</a>
+    <a class="nav-icon" href="home_external.html" aria-label="Shop">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l1.2 12.2a1.8 1.8 0 0 1-1.8 1.8H6.6a1.8 1.8 0 0 1-1.8-1.8L6 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+    </a>
+    <button class="nav-icon cart-wrap" id="cartSidebarToggle" aria-label="Open cart">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="17.5" cy="20" r="1.4"/><path d="M3 3h2.4l2.2 12h10.6l2.3-8.5H6"/></svg>
+      <span class="cart-badge" id="cartBadge"></span>
+    </button>
+    <a class="nav-icon" id="navLoginLink" href="login_external.html" aria-label="Login">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-1.5a4.5 4.5 0 0 0-4.5-4.5h-7A4.5 4.5 0 0 0 4 19.5V21"/><circle cx="12" cy="7.5" r="3.8"/></svg>
+    </a>
+    <div class="user-dd-wrap" id="userDdWrap" style="display:none;">
+      <button class="nav-icon" id="userDdBtn" aria-label="Account" aria-expanded="false">
+        <span id="ddAvatar" style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#000;color:#fff;font-size:11px;">A</span>
+      </button>
+      <div class="user-dd-panel" id="userDdPanel" aria-hidden="true">
+        <div class="dd-header">
+          <div class="dd-avatar" id="ddAvatar">A</div>
+          <div class="dd-user-info">
+            <span class="dd-user-name" id="ddUserName">—</span>
+            <span class="dd-user-email" id="ddUserEmail">—</span>
           </div>
+        </div>
+        <div class="dd-body">
+          <a class="dropdown-item" href="settings_external.html">Settings</a>
+          <a class="dropdown-item" href="order_history_external.html">My Orders</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-danger" href="#" id="logoutBtn">Log Out</a>
         </div>
       </div>
     </div>
   </div>
 </nav>
-
-<style>
-  #userDdPanel.open { display: block !important; }
-</style>
 
 <!-- ════ CART SIDEBAR ════════════════════════════ -->
 <div class="cart-overlay" id="cartOverlay"></div>
